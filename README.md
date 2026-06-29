@@ -10,11 +10,7 @@ API REST desenvolvida em **Java com Spring Boot** para gerenciamento de eventos 
 
 | Nome Completo | RGM |
 |---|---|
-| Nome do integrante 1 | RGM |
-| Nome do integrante 2 | RGM |
-| Nome do integrante 3 | RGM |
-| Nome do integrante 4 | RGM |
-| Nome do integrante 5 | RGM |
+| samira mousinho da silva pontes | 44294280 |
 
 ***
 
