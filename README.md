@@ -6,7 +6,6 @@ API REST desenvolvida em **Java com Spring Boot** para gerenciamento de eventos 
 
 ## Integrantes do Grupo
 
-> Preencha com os dados reais antes de enviar ao professor.
 
 | Nome Completo | RGM |
 |---|---|
@@ -292,18 +291,3 @@ Além dos requisitos mínimos, o projeto pode destacar:
 - Deploy em nuvem
 
 ***
-
-## Observações para Entrega
-
-Para a entrega da atividade, é obrigatório:
-
-- Deixar o repositório **público** no GitHub
-- Inserir no README o **nome completo e RGM** de todos os integrantes
-- Enviar o link do vídeo no YouTube como **público** ou **não listado**
-- Demonstrar no vídeo o funcionamento da API e os efeitos no banco de dados
-
-***
-
-## Licença
-
-Projeto acadêmico para fins educacionais.
