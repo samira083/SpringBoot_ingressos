@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistema de Gestão de Ingressos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:40px auto;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.header{
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+    color:white;
+    padding:35px;
+}
+
+.header h1{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.header p{
+    font-size:17px;
+}
+
+.content{
+    padding:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card{
+    background:#fafafa;
+    border:1px solid #ddd;
+    border-radius:15px;
+    padding:25px;
+}
+
+.card h2{
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+.field{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,select{
+
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #cbd5e1;
+    font-size:16px;
+
+}
+
+button{
+
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.secondary{
+
+    background:#dc2626;
+
+}
+
+.secondary:hover{
+
+    background:#b91c1c;
+
+}
+
+.ticket-box{
+
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius:12px;
+    padding:20px;
+    margin-top:20px;
+
+}
+
+.ticket-box h3{
+
+    color:#1e40af;
+    margin-bottom:10px;
+
+}
+
+.ticket-box ul{
+
+    padding-left:20px;
+
+}
+
+.ticket-box li{
+
+    margin-bottom:8px;
+
+}
+
+.info{
+
+    color:#475569;
+    margin-top:15px;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+
+}
+
+th,td{
+
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+
+}
+
+th{
+
+    background:#2563eb;
+    color:white;
+
+}
+
+@media(max-width:900px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>Sistema de Gestão de Ingressos</h1>
+
+<p>Interface para solicitação e gerenciamento de ingressos de eventos culturais.</p>
+
+</div>
+
+<div class="content">
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Solicitar Ingressos</h2>
+
+<div class="field">
+
+<label>Nome do comprador</label>
+
+<input
+id="nome"
+placeholder="Digite seu nome completo">
+
+</div>
+
+<div class="field">
+
+<label>Gmail do comprador</label>
+
+<input
+id="email"
+type="email"
+placeholder="exemplo@gmail.com">
+
+</div>
+
+<div class="field">
+
+<label>Senha da conta</label>
+
+<input
+id="senha"
+type="password"
+placeholder="Digite sua senha">
+
+</div>
+
+<div class="field">
+
+<label>Evento</label>
+
+<select>
+
+<option>Show Cultural</option>
+
+<option>Peça de Teatro</option>
+
+<option>Festival de Música</option>
+
+<option>Stand-up Comedy</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label>Quantidade de ingressos</label>
+
+<select>
+
+<option>1 ingresso</option>
+
+<option>2 ingressos</option>
+
+<option>3 ingressos</option>
+
+<option>4 ingressos</option>
+
+<option>5 ingressos</option>
+
+</select>
+
+</div>
+
+<button onclick="salvarUsuario()">
+
+Emitir Ingressos
+
+</button>
+
+<p class="info">
+
+O sistema utiliza os dados do comprador para registrar a emissão dos ingressos.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Painel de Emissão</h2>
+
+<p>
+
+Após informar seus dados, o sistema registra o comprador e permite consultar todos os usuários cadastrados.
+
+</p>
+
+<div class="ticket-box">
+
+<h3>Resumo da Operação</h3>
+
+<ul>
+
+<li>Nome do comprador</li>
+
+<li>Gmail cadastrado</li>
+
+<li>Evento selecionado</li>
+
+<li>Quantidade de ingressos</li>
+
+<li>Confirmação da emissão</li>
+
+</ul>
+
+</div>
+
+<div style="margin-top:20px;">
+
+<button class="secondary">
+
+Cancelar Ingresso
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Compradores Cadastrados</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Nome</th>
+
+<th>Email</th>
+
+<th>Excluir</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabela">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+listar();
+    function listar(){
+
+fetch("/usuarios")
+
+.then(r=>r.json())
+
+.then(lista=>{
+
+let tabela="";
+
+lista.forEach(u=>{
+
+tabela += `
+
+<tr>
+
+<td>${u.id}</td>
+
+<td>${u.nome}</td>
+
+<td>${u.email}</td>
+
+<td>
+
+<button onclick="deletar(${u.id})">
+
+Excluir
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("tabela").innerHTML = tabela;
+
+});
+
+}
+
+function salvarUsuario(){
+
+let usuario={
+
+nome:document.getElementById("nome").value,
+
+email:document.getElementById("email").value,
+
+senha:document.getElementById("senha").value
+
+};
+
+fetch("/usuarios",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify(usuario)
+
+})
+
+.then(()=>{
+
+document.getElementById("nome").value="";
+document.getElementById("email").value="";
+document.getElementById("senha").value="";
+
+listar();
+
+});
+
+}
+
+function deletar(id){
+
+fetch("/usuarios/"+id,{
+
+method:"DELETE"
+
+})
+
+.then(()=>listar());
+
+}
+
+</script>
+
+</body>
+
+</html>
