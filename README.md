@@ -196,16 +196,10 @@ gradlew.bat bootRun
 Após iniciar a aplicação, acessar:
 
 ```text
-http://localhost:8080/swagger-ui.html
+[localhost:8080/swagger-ui.html](http://localhost:8081/)
 ```
 
-ou, dependendo da configuração:
 
-```text
-http://localhost:8080/swagger-ui/index.html
-```
-
-***
 
 ## Exemplos de Endpoints
 
